@@ -10,6 +10,8 @@ import java.util.Scanner;
 
 public class Adiminstrator extends Person{
       
+// firas has modified this code
+
 	  public Adiminstrator(String name, String deparment, String email) {
 		super(name,email,deparment) ;
 	}
