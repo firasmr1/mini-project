@@ -1,0 +1,81 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Teacher extends Person{
+
+    String module;
+
+    ArrayList<Teacher> T = new ArrayList<>();
+    ArrayList<Teacher> INFOS = new ArrayList<>();
+	
+	Teacher(String a , String b ,String c, int d , String m){
+		super(a,b,d,c);
+		module = m;
+		
+	}
+
+    Teacher(String a , String b){
+        super(a,b);
+    }
+
+    Teacher(){
+
+    }
+Scanner newScanner = new Scanner(System.in);
+     public void addTeacher() {
+	 	Scanner scan = new Scanner(System.in);
+	 	System.out.print("Enter the first name of the teacher: ");
+	 	String fName = scan.nextLine();
+	 	System.out.print("Enter the last name of the teacher: ");
+	 	String lName = scan.nextLine();
+boolean bo = true;
+		
+		while(bo) {
+		System.out.println("Enter the gender of teacher: ");
+		System.out.println("1__Male");
+		System.out.println("2__Female");
+		int gd = scan.nextInt();
+		if(gd==1) {
+			gndr="Male";
+			bo=false;
+		}else if(gd==2) {
+			gndr = "Female";
+			bo=false;
+		}
+		}
+        
+	 	System.out.print("Enter the module of the teacher: ");
+	 	String mdl = newScanner.nextLine();
+	 	System.out.print("Enter the age of the teacher: ");
+	 	int age = scan.nextInt();
+	 	Teacher teacher = new Teacher(fName,lName,gndr,age,mdl);
+        teacher=new Teacher(fName,"teacher");
+	 	T.add(teacher);
+	    INFOS.add(teacher);
+	 }
+
+
+     public void displayTeachers() {
+		 
+        if(!T.isEmpty()) {
+            System.out.println("Ingineer students: ");
+               for(Teacher i : T) {
+                   System.out.println(i.firstName+" prof of "+i.module);
+               }
+            }
+        
+    }
+
+    
+    public void viewTeachersInfos(){
+
+        for(Teacher t : INFOS){
+            System.out.println(t.firstName+","+t.lastName+": "+"username: "+t.username+"  key: "+t.Key);
+        }
+
+    } 
+
+
+
+
+}
