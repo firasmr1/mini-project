@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//aaa
 public class Adiminstrator extends Person{
       
 	  public Adiminstrator(String name, String deparment, String email) {
