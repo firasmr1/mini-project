@@ -27,7 +27,19 @@ public class Grade implements GradeCalculator{
 	       }
 	  }
 
-
+ListsClass Lists = new ListsClass();
+			
+			public void calculateModulesMoys() {
+				for(Student s : Lists.studentsList) {
+					for(Module m :s.studentModule) {
+						if(m.TP.getTPAverrage()==0) {
+							m.moyModule=((m.TD.getTPAverrage()+m.Interro)/2*0.4 + m.Control*0.6);
+						}else {
+							m.moyModule=((m.TD.getTPAverrage()+m.TP.getTPAverrage()+m.Interro)/3*0.4 + m.Control*0.6);
+						}
+					}
+				}
+			}
 	
 	
 	
