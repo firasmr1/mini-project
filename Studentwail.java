@@ -69,6 +69,28 @@ this.GradeFinal=X;
 			System.out.println("The Promotion :"+this.getPromotion());
 		}
 		
+		ListsClass Lists = new ListsClass();
+		ArrayList <Module> studentModule = new ArrayList<>();
+		
+		String stdFormation;
+		
+		public void setStudentModules() {
+			for(Module m : ListsClass.modulesList) {
+				if(m.getFormation() == this.stdFormation) {
+					ModuleStudy.add(m);
+				}
+			}
+		}
+		
+		public double getMoy() {
+			double moy = 0;
+			int coefs=0;
+			for(Module m : ModuleStudy) {
+				moy=moy+m.getMoyModule();
+				coefs = coefs + m.getCoef();
+			}
+			return (moy/coefs);
+		}
 		
 		
 
