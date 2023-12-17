@@ -19,4 +19,37 @@ public class Teacher extends Person{
 			}		
 		}
 
+ListsClass Lists = new ListsClass();
+	
+	public void setGrades() {
+		boolean Run = true;
+		for(Student s: Lists.studentsList) {
+			for(Module m : s.studentModule) {
+				if(m.Prof==this.getName()) {
+					Scanner S = new Scanner(System.in);
+					while(Run) {
+						System.out.println(s.getName()+" "+s.getPromotion() +" "+s.getSection()+" "+s.getGroupe());
+						System.out.println("1__TD");
+						System.out.println("2__TP");
+						System.out.println("3__Exit");
+					System.out.print("Enter your choice: ");
+					int i = S.nextInt();
+					switch(i) {
+					case 1:
+						m.TD.setTPAverrage(i);
+						break;
+						
+					case 2:
+						m.TP.setTPAverrage(i);
+						break;
+						
+					case 3:
+						Run=false;
+					}
+					}
+				}
+			}
+		}
+	}
+	
 }
